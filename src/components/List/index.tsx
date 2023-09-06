@@ -1,7 +1,14 @@
-import { FC, PropsWithChildren } from 'react'
+import { FC } from 'react'
 
+import Item from './components/Item'
 import { StyledList } from './style'
 
-const List: FC<PropsWithChildren> = ({ children }) => <StyledList>{children}</StyledList>
+const List: FC<{ items: any[] }> = ({ items }) => (
+  <StyledList>
+    {items.map((item, idx) => (
+      <Item key={idx} item={item} />
+    ))}
+  </StyledList>
+)
 
 export default List

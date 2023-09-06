@@ -4,7 +4,7 @@ import { Tabs as AntdTabs } from 'antd'
 
 import List from '../List'
 
-const Tabs: FC = () => {
+const Tabs: FC<any> = ({ data }) => {
   return (
     <AntdTabs
       defaultActiveKey="1"
@@ -13,7 +13,7 @@ const Tabs: FC = () => {
         return {
           label: name,
           key: `${idx}`,
-          children: <List></List>
+          children: <List items={[]} />
         }
       })}
     />

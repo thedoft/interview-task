@@ -7,7 +7,7 @@ import Tabs from '@/components/Tabs'
 import { getStaticPropsGenerator } from '@/lib/getStaticPropsGenerator'
 import { json } from '../data'
 
-const Home: NextPage = () => {
+const Home: NextPage<any> = ({ data }) => {
   return (
     <Space direction="vertical" style={{ width: '100%' }}>
       <Tabs />
