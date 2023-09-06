@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Provider as StoreProvider } from 'react-redux'
 
 import { ConfigProvider as AntdConfigProvider } from 'antd'
@@ -19,37 +18,20 @@ const defaultTheme: DefaultTheme = {
   }
 }
 
-const darkTheme: DefaultTheme = {
-  colors: {
-    background: 'lightgrey'
-  }
-}
-
 const NextApp = ({ Component, router, ...rest }: AppProps) => {
   const { store, props } = wrapper.useWrappedStore(rest)
 
-  const [theme, setTheme] = useState('light')
-
-  const onChangeTheme = (theme: 'light' | 'dark') => {
-    setTheme(theme)
-  }
-
   const antdTheme: ThemeConfig = {
     token: {
-      colorBgLayout: theme === 'light' ? defaultTheme.colors.background : darkTheme.colors.background
+      colorBgLayout: defaultTheme.colors.background
     }
   }
 
   return (
-    <StyledThemeProvider theme={theme === 'light' ? defaultTheme : darkTheme}>
+    <StyledThemeProvider theme={defaultTheme}>
       <AntdConfigProvider locale={ruRU} theme={antdTheme}>
         <StoreProvider store={store}>
-          <Application
-            Component={Component}
-            pageProps={props.pageProps}
-            router={router}
-            onChangeTheme={onChangeTheme}
-          />
+          <Application Component={Component} pageProps={props.pageProps} router={router} />
         </StoreProvider>
       </AntdConfigProvider>
     </StyledThemeProvider>

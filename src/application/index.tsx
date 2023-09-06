@@ -6,11 +6,7 @@ import Head from 'next/head'
 import Layout from './components/Layout'
 import { GlobalStyle } from './style'
 
-const Application: FC<AppProps & { onChangeTheme: (theme: 'light' | 'dark') => void }> = ({
-  Component,
-  pageProps,
-  onChangeTheme
-}) => {
+const Application: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
@@ -18,7 +14,7 @@ const Application: FC<AppProps & { onChangeTheme: (theme: 'light' | 'dark') => v
       </Head>
       <Layout>
         <GlobalStyle />
-        <Component {...pageProps} onChangeTheme={onChangeTheme} />
+        <Component {...pageProps} />
       </Layout>
     </>
   )

@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 export const fetchDataAction = createAsyncThunk('data', async () => {
   let json = null
 
-  const response = await fetch('https://next.umax.local/api/client/data')
+  const response = await fetch('')
 
   if (response.ok) {
     json = await response.json()

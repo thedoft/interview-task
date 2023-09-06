@@ -4,24 +4,17 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import { fetchDataAction } from '../actions/fetchDataAction'
 
-export interface IData {
-  id: string
-  type: 'visa' | 'mastercard'
-  name: string
-  createdAt: string
-}
-
-const initialState: IData[] = []
+const initialState: any[] = []
 
 export const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {},
   extraReducers: {
-    [HYDRATE]: (state, action: PayloadAction<{ data: IData[] }>) => {
+    [HYDRATE]: (state, action: PayloadAction<{ data: any[] }>) => {
       return [...action.payload.data]
     },
-    [fetchDataAction.fulfilled.type]: (state, action: PayloadAction<{ data: IData[] }>) => {
+    [fetchDataAction.fulfilled.type]: (state, action: PayloadAction<{ data: any[] }>) => {
       return [...action.payload.data]
     }
   }
