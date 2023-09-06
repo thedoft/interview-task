@@ -5,6 +5,7 @@ import { NextPage } from 'next'
 import Buttons from '@/components/Buttons'
 import Tabs from '@/components/Tabs'
 import { getStaticPropsGenerator } from '@/lib/getStaticPropsGenerator'
+import { json } from '../data'
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +19,9 @@ const Home: NextPage = () => {
 
 export const getStaticProps = getStaticPropsGenerator(async (context, store) => {
   return {
-    props: {}
+    props: {
+      data: json
+    }
   }
 })
 
