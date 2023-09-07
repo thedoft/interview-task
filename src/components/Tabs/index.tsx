@@ -9,7 +9,7 @@ const Tabs: FC<any> = ({ data }) => {
     <AntdTabs
       defaultActiveKey="1"
       centered
-      items={[].map((name, idx) => {
+      items={[1, 2].map((name, idx) => {
         return {
           label: name,
           key: `${idx}`,

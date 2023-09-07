@@ -10,7 +10,7 @@ import { json } from '../data'
 const Home: NextPage<any> = ({ data }) => {
   return (
     <Space direction="vertical" style={{ width: '100%' }}>
-      <Tabs />
+      <Tabs data={data} />
       <Divider />
     </Space>
   )
