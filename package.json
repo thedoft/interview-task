@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "preinstall": "node ./scripts/check-version.js"
+    "lint:fix": "next lint --fix"
   },
   "browserslist": [
     "defaults",
