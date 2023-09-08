@@ -9,11 +9,11 @@ const Tabs: FC<any> = ({ data }) => {
     <AntdTabs
       defaultActiveKey="1"
       centered
-      items={[1, 2].map((name, idx) => {
+      items={['type 1', 'type 2'].map((name, idx) => {
         return {
           label: name,
           key: `${idx}`,
-          children: <List items={[]} />
+          children: <List items={['test 1', 'test 2']} />
         }
       })}
     />
